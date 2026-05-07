@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Yachts & Living – Crewed Yacht Charters in Greece</title>
+<meta name="description" content="Crewed Yacht Charters in Greece with Yachts & Living"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #003321;
+    --green-light: #004d30;
+    --white: #ffffff;
+    --off-white: #f7f5f2;
+    --black: #0a0a0a;
+    --gray: #6b6b6b;
+    --gray-light: #e8e4df;
+    --border: #d4cfc9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 0 4rem;
+    height: 80px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    transition: all .3s ease;
+  }
+  nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.06); }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color: var(--black);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--green); }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; align-items: center;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: .8rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--black);
+    position: relative;
+    transition: color .2s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--green);
+    transition: width .3s ease;
+  }
+  .nav-links a:hover { color: var(--green); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--green) !important;
+    color: var(--white) !important;
+    padding: .6rem 1.4rem !important;
+    letter-spacing: .1em !important;
+  }
+  .nav-cta:hover { background: var(--green-light) !important; }
+  .nav-cta::after { display: none !important; }
+
+  /* ── HERO ── */
+  #hero {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,.35) 0%, rgba(0,0,0,.15) 60%, rgba(0,0,0,.5) 100%),
+                url('https://yachtsandliving.com/wp-content/uploads/slider36/AlteyaSunreef70CatamaranCrewedYachtCharter7-1024x679.webp?w=1800&q=85') center/cover no-repeat;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-size: .7rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.08;
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title em { font-style: italic; font-weight: 300; }
+
+  .hero-sub {
+    font-size: .9rem;
+    color: rgba(255,255,255,.8);
+    max-width: 480px;
+    margin-bottom: 3rem;
+    letter-spacing: .03em;
+    line-height: 1.8;
+  }
+
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  }
+
+  .btn-primary {
+    background: var(--green);
+    color: var(--white);
+    padding: .9rem 2.2rem;
+    text-decoration: none;
+    font-size: .75rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    transition: background .25s, transform .2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--green-light); transform: translateY(-1px); }
+
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,.7);
+    color: var(--white);
+    padding: .9rem 2.2rem;
+    text-decoration: none;
+    font-size: .75rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    transition: all .25s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+  }
+  .hero-scroll span {
+    font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, rgba(255,255,255,.6), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%,100% { opacity: .4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 4rem; }
+
+  .section-label {
+    font-size: .65rem; letter-spacing: .25em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    max-width: 600px;
+  }
+
+  /* ── TRUST BAR ── */
+  #trust {
+    padding: 3rem 4rem;
+    background: var(--off-white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+  .trust-item { padding: 1.5rem 1rem; }
+  .trust-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--green);
+    display: block;
+  }
+  .trust-label {
+    font-size: .72rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: .3rem;
+  }
+
+  /* ── WHY US ── */
+  #why {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .why-img {
+    height: 600px;
+    background: url('https://yachtsandliving.com/wp-content/uploads/2026/03/CHRISTAL-MIO-80-Fountaine-Pajot-Power-80-Crewed-Catamaran-2-1024x640.webp?w=800&q=85') center/cover;
+    position: relative;
+  }
+  .why-img::before {
+    content: '';
+    position: absolute; bottom: -2rem; right: -2rem;
+    width: 200px; height: 200px;
+    border: 1px solid var(--green);
+    z-index: -1;
+  }
+
+  .why-content { padding: 2rem 0; }
+  .why-pillars { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+  .pillar {
+    border-left: 2px solid var(--green);
+    padding: .5rem 0 .5rem 1.5rem;
+  }
+  .pillar-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: .3rem;
+  }
+  .pillar-text { font-size: .85rem; color: var(--gray); line-height: 1.7; }
+
+  /* ── FLEET SECTION ── */
+  #fleet { background: var(--off-white); }
+
+  .fleet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .filter-tabs {
+    display: flex; gap: .5rem; flex-wrap: wrap;
+  }
+  .filter-tab {
+    padding: .5rem 1.2rem;
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'Jost', sans-serif;
+    color: var(--black);
+  }
+  .filter-tab.active,
+  .filter-tab:hover {
+    background: var(--green);
+    color: var(--white);
+    border-color: var(--green);
+  }
+
+  .yacht-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .yacht-card {
+    background: var(--white);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .3s, box-shadow .3s;
+    position: relative;
+  }
+  .yacht-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,.1); }
+
+  .yacht-card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+    background: var(--gray-light);
+  }
+  .yacht-card:hover .yacht-card-img { transform: scale(1.03); }
+
+  .yacht-card-body { padding: 1.5rem; }
+
+  .yacht-type-badge {
+    font-size: .6rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: .5rem;
+    display: block;
+  }
+
+  .yacht-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: .3rem;
+  }
+
+  .yacht-meta {
+    font-size: .78rem;
+    color: var(--gray);
+    margin-bottom: 1rem;
+  }
+
+  .yacht-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-light);
+  }
+
+  .yacht-price-label { font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); }
+  .yacht-price-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .yacht-card-btn {
+    width: 32px; height: 32px;
+    border: 1px solid var(--green);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--green);
+    font-size: .9rem;
+    transition: all .2s;
+    flex-shrink: 0;
+  }
+  .yacht-card:hover .yacht-card-btn {
+    background: var(--green); color: var(--white);
+  }
+
+  /* ── DESTINATIONS ── */
+  #destinations {}
+  .dest-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  .dest-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .dest-card img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+  }
+  .dest-card:hover img { transform: scale(1.05); }
+  .dest-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 60%);
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+  }  
+  .dest-name a {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--white);
+   text-transform: uppercase; 
+   text-decoration:none;
+  }
+  .dest-tag {
+    font-size: .65rem; letter-spacing: .15em;
+    text-transform: uppercase; color: rgba(255,255,255,.7);
+    margin-top: .2rem;
+  }
+
+  /* ── PROCESS ── */
+  #process { background: var(--green); }
+  #process .section-label { color: rgba(255,255,255,.5); }
+  #process .section-title { color: var(--white); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  .process-step { color: var(--white); position: relative; }
+  .process-step::after {
+    content: '';
+    position: absolute; top: 1.5rem; left: 100%;
+    width: calc(100% - 2rem); height: 1px;
+    background: rgba(255,255,255,.2);
+    pointer-events: none;
+  }
+  .process-step:last-child::after { display: none; }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    opacity: .25;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
+  .step-text { font-size: .82rem; opacity: .7; line-height: 1.8; }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--off-white); }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .testimonial-card { background: var(--white); padding: 2rem; }
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: var(--green);
+    line-height: .5;
+    margin-bottom: 1rem;
+  }
+  .testimonial-text {
+    font-size: .88rem;
+    line-height: 1.85;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-author { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+  .testimonial-loc { font-size: .7rem; color: var(--gray); margin-top: .2rem; }
+
+  /* ── BOOKING MODAL ── */
+  #booking-modal {
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 2000;
+    background: rgba(0,0,0,.7);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  #booking-modal.open { display: flex; }
+
+  .modal-box {
+    background: var(--white);
+    max-width: 680px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 3rem;
+    position: relative;
+    animation: modalIn .3s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .modal-close {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: none; border: none; font-size: 1.5rem;
+    cursor: pointer; color: var(--gray);
+    line-height: 1;
+  }
+
+  .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300;
+    margin-bottom: .5rem;
+  }
+  .modal-sub { font-size: .82rem; color: var(--gray); margin-bottom: 2rem; }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .form-group { display: flex; flex-direction: column; gap: .4rem; }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gray); }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: .75rem 1rem;
+    border: 1px solid var(--border);
+    font-family: 'Jost', sans-serif;
+    font-size: .85rem;
+    font-weight: 300;
+    color: var(--black);
+    background: var(--white);
+    outline: none;
+    transition: border-color .2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--green); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-submit {
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: .75rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s;
+    margin-top: 1rem;
+  }
+  .form-submit:hover { background: var(--green-light); }
+
+  /* ── DETAIL PAGE ── */
+  #detail-page {
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 900;
+    background: var(--white);
+    overflow-y: auto;
+    animation: pageIn .4s ease;
+  }
+  #detail-page.open { display: block; }
+  @keyframes pageIn {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .detail-back {
+    position: fixed; top: 90px; left: 2rem;
+    z-index: 950;
+    display: flex; align-items: center; gap: .5rem;
+    font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--white);
+    cursor: pointer;
+    background: var(--green);
+    padding: .5rem 1rem;
+    border: none;
+    font-family: 'Jost', sans-serif;
+  }
+
+  .detail-hero {
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex; align-items: flex-end;
+    padding: 3rem 4rem;
+  }
+  .detail-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.8) 0%, transparent 60%);
+  }
+  .detail-hero-content { position: relative; z-index: 1; color: var(--white); }
+  .detail-type-badge {
+    font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+    color: rgba(255,255,255,.7); margin-bottom: .5rem;
+  }
+  .detail-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: .5rem;
+  }
+  .detail-subtitle { font-size: .85rem; opacity: .8; }
+
+  .detail-body { max-width: 1200px; margin: 0 auto; padding: 4rem; }
+
+  .detail-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; }
+
+  .detail-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 300;
+    margin-bottom: 1.5rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+  }
+  .spec-item {
+    display: flex; flex-direction: column;
+    padding: .75rem;
+    background: var(--off-white);
+  }
+  .spec-label { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gray); }
+  .spec-val { font-size: .9rem; margin-top: .2rem; font-weight: 400; }
+
+  .accommodation-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .acc-item {
+    text-align: center; padding: 1.5rem 1rem;
+    border: 1px solid var(--border);
+  }
+  .acc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 300; color: var(--green);
+  }
+  .acc-label { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gray); }
+
+  .price-table { margin-top: 1.5rem; }
+  .price-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .price-season { font-size: .8rem; letter-spacing: .08em; }
+  .price-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+  }
+  .price-apa { font-size: .7rem; color: var(--gray); }
+
+  .detail-sidebar { position: sticky; top: 100px; align-self: start; }
+  .sidebar-card { border: 1px solid var(--border); padding: 2rem; }
+  .sidebar-cta {
+    width: 100%;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: .75rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background .2s;
+	text-decoration:none;
+  }
+  .sidebar-cta:hover { background: var(--green-light); }
+
+  .toys-list {
+    display: flex; flex-wrap: wrap; gap: .5rem;
+    margin-top: 1.5rem;
+  }
+  .toy-tag {
+    padding: .4rem .9rem;
+    border: 1px solid var(--border);
+    font-size: .72rem;
+    letter-spacing: .08em;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .75rem;
+    margin-top: 1.5rem;
+  }
+  .gallery-img {
+    width: 100%; aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: opacity .2s;
+    background: var(--gray-light);
+  }
+  .gallery-img:hover { opacity: .85; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 5rem 4rem 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .footer-brand span { color: #004d30; }
+  .footer-desc { font-size: .82rem; opacity: .5; line-height: 1.8; max-width: 260px; }
+  .footer-desc a{ color:#fff;}
+
+  .footer-col h4 {
+    font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+    opacity: .4; margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+  .footer-col ul a {
+    text-decoration: none; font-size: .82rem; opacity: .6;
+    color: var(--white); transition: opacity .2s;
+  }
+  .footer-col ul a:hover { opacity: 1; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding-top: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: .72rem; opacity: .4;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    section { padding: 4rem 2rem; }
+    nav { padding: 0 2rem; }
+    #why { grid-template-columns: 1fr; gap: 2rem; }
+    .yacht-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .dest-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .detail-grid { grid-template-columns: 1fr; }
+    .detail-sidebar { position: static; }
+    .detail-body { padding: 2rem; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .yacht-grid { grid-template-columns: 1fr; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .dest-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .process-step::after { display: none; }
+    .footer-grid { grid-template-columns: 1fr; }
+    #trust { padding: 2rem; }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo" onclick="showHome()">Yachts & <span>Living
+</span></a>
+  <ul class="nav-links">
+    <li><a href="#fleet" onclick="showHome()">Our Fleet</a></li>
+    <li><a href="#destinations" onclick="showHome()">Destinations</a></li>
+    <li><a href="#why" onclick="showHome()">About</a></li>
+    <li><a href="#process" onclick="showHome()">How It Works</a></li>
+    <li><a href="https://yachtsandliving.com/private-yacht-charter-in-greece/" class="nav-cta" >Enquire Now</a></li>
+	<!--<a href="#" class="nav-cta" onclick="openBooking()"> -->
+  </ul>
+</nav>
+
+<!-- MAIN SITE -->
+<div id="main-site">
+
+  <!-- HERO -->
+  <section id="hero">
+    <p class="hero-eyebrow">Crewed Yacht Charters · Greece</p>
+    <h1 class="hero-title">Your Private Greek <em>Odyssey</em> Awaits</h1>
+    <p class="hero-sub">We match you to the right yacht, the right crew, and the right itinerary. No guesswork. No fine print surprises.</p>
+    <div class="hero-btns">
+      <a href="#fleet" class="btn-primary">Explore the Fleet</a>
+      <a href="https://yachtsandliving.com/private-yacht-charter-in-greece/" class="btn-ghost">Request a Proposal</a>
+	  <!-- <a href="" class="btn-ghost" onclick="openBooking()">Request a Proposal</a> -->
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div id="trust">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="trust-num">60+</span>
+        <span class="trust-label">Yachts in Fleet</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">15+</span>
+        <span class="trust-label">Years in Tourism</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">4</span>
+        <span class="trust-label">Sailing Regions</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">100%</span>
+        <span class="trust-label">MYBA Contract Standard</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="why-img"></div>
+    <div class="why-content">
+      <p class="section-label">Why Yachts & Living</p>
+      <h2 class="section-title">Booking a yacht should feel easy. We make sure it is.</h2>
+      <p style="margin-top:1.5rem;font-size:.88rem;color:var(--gray);line-height:1.9;">
+        We are an agency based in Preveza. Every yacht in our fleet is carefully selected to meet our standards, and every crew member is trained and certified to meet the EU standards for yachting and safefty. When you book with us, you know exactly what you are getting.
+      </p>
+      <div class="why-pillars">
+        <div class="pillar">
+          <div class="pillar-title">Professional Crew, Every Time</div>
+          <div class="pillar-text">Every captain and crew member in our fleet holds the required certifications. The yachts and catamarans we list have check their references, and stay in contact throughout the season. Your safety at sea is not negotiable.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Full Transparency on Costs</div>
+          <div class="pillar-text">The charter rate, APA, VAT, and any port fees are laid out clearly before you sign anything. No surprises on your final bill. Your APA expenses are visible online in real time during the cruise.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Accountable from Day One</div>
+          <div class="pillar-text">All charters run on MYBA contracts, the international gold standard for yacht charter agreements. You have legal protection, and we stand behind every booking we make.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET -->
+  <section id="fleet">
+    <div class="fleet-header">
+      <div>
+        <p class="section-label">Our Fleet</p>
+        <h2 class="section-title">Find Your Yacht</h2>
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterYachts('all', this)">All</button>
+        <button class="filter-tab" onclick="filterYachts('Sailing Catamaran', this)">Sailing Catamarans</button>
+        <button class="filter-tab" onclick="filterYachts('Motor Yacht', this)">Motor Yachts</button>
+        <button class="filter-tab" onclick="filterYachts('Power Catamaran', this)">Power Catamarans</button>
+      </div>
+    </div>
+    <div class="yacht-grid" id="yacht-grid"></div>
+  </section>
+
+  <!-- DESTINATIONS -->
+  <section id="destinations">
+    <p class="section-label">Where to Go</p>
+    <h2 class="section-title">The Greek Seas and Islands, Up Close</h2>
+    <div class="dest-grid">
+      <div class="dest-card">
+        <img src="https://yachtsandliving.com/wp-content/uploads/2025/08/Milos-1024x536.webp?w=600&q=80" alt="Cyclades">
+        <div class="dest-overlay">
+          <div class="dest-name"><a href="https://yachtsandliving.com/cyclades-islands/">Cyclades</a></div>
+          <div class="dest-tag">Mykonos · Santorini · Paros · Milos</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://yachtsandliving.com/wp-content/uploads/2025/08/Ithaca-1024x536.webp?w=600&q=80" alt="Ionian">
+        <div class="dest-overlay">
+          <div class="dest-name"><a href="https://yachtsandliving.com/ionian-islands/">Ionian</a></div>
+          <div class="dest-tag">Corfu · Lefkada · Kefalonia · Zakynthos</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://yachtsandliving.com/wp-content/uploads/2025/08/Athens-Marina-1024x508.png?w=600&q=80" alt="Saronic Gulf">
+        <div class="dest-overlay">
+          <div class="dest-name"><a href="https://yachtsandliving.com/saronic-islands/">Athens Riviera & Saronic</a></div>
+          <div class="dest-tag">Hydra · Spetses · Aegina · Poros</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://yachtsandliving.com/wp-content/uploads/2026/04/dodacanse.jpeg?w=600&q=80" alt="Dodecanese">
+        <div class="dest-overlay">
+          <div class="dest-name"><a href="https://yachtsandliving.com/yachting-destinations/greece/">Dodecanese</a></div>
+          <div class="dest-tag">Rhodes · Kos · Patmos · Symi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title" style="color:var(--white);">From enquiry to boarding in four steps.</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Tell Us What You Need</div>
+        <div class="step-text">Dates, group size, destination preference, and budget. We'll take it from there and come back with a curated shortlist of yachts.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">We Match You to the Right Yacht</div>
+        <div class="step-text">We present options with honest detail, including crew profiles, yacht condition, and what the APA realistically covers for your itinerary.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Sign and Secure</div>
+        <div class="step-text">Your charter is confirmed with a MYBA contract and a 50% deposit. The remaining balance and APA are due one month before embarkation.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Board and Enjoy</div>
+        <div class="step-text">We send full boarding instructions, itinerary suggestions, and stay on call throughout your trip. All APA spending is visible to you in real time.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <p class="section-label">Guest Stories</p>
+    <h2 class="section-title">What our guests say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">The FX team found us a sailing catamaran that fit our group of eight perfectly. The crew was extraordinary and the APA tracking was a nice touch — no surprises at the end of the trip.</p>
+        <div class="testimonial-author">Jonathan M.</div>
+        <div class="testimonial-loc">Cyclades Charter · August 2024</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">We had never done a crewed charter before. The team walked us through everything — what APA covers, how the MYBA contract protects us, what to expect from the captain. Felt completely looked after.</p>
+        <div class="testimonial-author">Sofia & Marcus L.</div>
+        <div class="testimonial-loc">Saronic Gulf Charter · June 2024</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">We've done five charters in Greece. Yachts & Living is the only broker we go back to. The yacht was exactly as described, the crew was vetted and professional, and the whole process was simple.</p>
+        <div class="testimonial-author">David & Claire R.</div>
+        <div class="testimonial-loc">Ionian Charter · July 2024</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Yachts & <span>Living</span></div>
+        <p class="footer-desc"><a href="https://yachtsandliving.com/">Yachts & Living for crewed yacht charters in Greece.</a> 
+		<br>Based in Preveza. <br>Operating since 2025.<br>
+		<a href="https://private-yacht-charter.netlify.app/yachts-and-living-private-yacht-charter">Yachting Destinations</a> 
+		</p>
+      </div>
+      <div class="footer-col">
+        <h4>Fleet</h4>
+        <ul>
+          <li><a href="https://yachtsandliving.com/yachts/motor-yachts/">Motor Yachts</a></li>
+          <li><a href="https://yachtsandliving.com/catamarans/power-catamaran/">Power Catamarans</a></li>
+		  <li><a href="https://yachtsandliving.com/catamarans/sailing-catamaran/">Sailing Catamarans</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Destinations</h4>
+        <ul>
+          <li><a href="https://yachtsandliving.com/cyclades-islands/">CycladesI slands</a></li>
+          <li><a href="https://yachtsandliving.com/ionian-islands/">Ionian Islands</a></li>
+          <li><a href="https://yachtsandliving.com/saronic-islands/">Athens Riviera</a></li>
+          <li><a href="https://yachtsandliving.com/saronic-islands/">Saronic Islands</a></li>
+          <li><a href="https://yachtsandliving.com/yachting-destinations/itineraries/">Itineraries</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://yachtsandliving.com/contact-us/">Contact</a></li>
+          <li><a href="tel:+302109858670">+30 6975708949</a></li>
+          <li><a href="#">Preveza Greece</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Yachts & Living All rights reserved.</span>
+      <span>MYBA · Greek Tourism · Preveza, Greece</span>
+    </div>
+  </footer>
+
+</div><!-- /main-site -->
+
+<!-- DETAIL PAGE -->
+<div id="detail-page">
+  <button class="detail-back" onclick="closeDetail()">← Back to Fleet</button>
+  <div class="detail-hero" id="detail-hero"></div>
+  <div class="detail-body">
+    <div class="detail-grid">
+      <div class="detail-main" id="detail-main"></div>
+      <div class="detail-sidebar" id="detail-sidebar"></div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING MODAL -->
+<div id="booking-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeBooking()">×</button>
+    <h2 class="modal-title">Request a Charter</h2>
+    <p class="modal-sub">Tell us about your trip. We'll come back to you within 24 hours with a tailored proposal.</p>
+   <form action="https://formspree.io/f/george.sklavounos1@gmail.com" method="POST">
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Full Name *</label>
+      <input type="text" name="full_name" placeholder="Your full name" required>
+    </div>
+    <div class="form-group">
+      <label>Email *</label>
+      <input type="email" name="email" placeholder="your@email.com" required>
+    </div>
+    <div class="form-group">
+      <label>Phone *</label>
+      <input type="tel" name="phone" placeholder="+1 000 000 0000" required>
+    </div>
+    <div class="form-group">
+      <label>Number of Guests *</label>
+      <input type="number" name="guests" min="2" max="12" placeholder="e.g. 6" required>
+    </div>
+    <div class="form-group">
+      <label>Destination</label>
+      <select name="destination">
+        <option value="">Select destination</option>
+        <option>Athens Riviera</option>
+        <option>Cyclades</option>
+        <option>Ionian Islands</option>
+        <option>Saronic Gulf</option>
+        <option>Dodecanese</option>
+        <option>Croatia</option>
+        <option>Red Sea</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Preferred Dates</label>
+      <input type="text" name="dates" placeholder="e.g. July 12 – July 19, 2026">
+    </div>
+    <div class="form-group">
+      <label>Yacht Type Preference</label>
+      <select name="yacht_type">
+        <option value="">Any</option>
+        <option>Sailing Catamaran</option>
+        <option>Motor Yacht</option>
+        <option>Power Catamaran</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Weekly Budget (EUR)</label>
+      <select name="budget">
+        <option value="">Select range</option>
+        <option>Under €20,000</option>
+        <option>€20,000 – €35,000</option>
+        <option>€35,000 – €55,000</option>
+        <option>€55,000 – €80,000</option>
+        <option>€80,000+</option>
+      </select>
+    </div>
+    <div class="form-group full">
+      <label>Specific Yacht (if known)</label>
+      <input type="text" name="specific_yacht" placeholder="Yacht name or leave blank" id="modal-yacht-prefill">
+    </div>
+    <div class="form-group full">
+      <label>Additional Notes</label>
+      <textarea name="message" placeholder="Special occasions, dietary needs, etc."></textarea>
+    </div>
+  </div>
+  <button type="submit" class="form-submit"  >Send Enquiry</button>
+</form>
+  </div>
+</div>
+
+<script>
+// ── YACHT DATA ──
+const yachts = [
+  // SAILING CATAMARANS 55-82ft
+  { id: 1, name: 'GENNY', type: 'Sailing Catamaran', model: 'Sunreef 80', builder: 'Sunreef Yachts', year: 2021, guests: 10, cabins: 5, crew: 6, highSeason: 79000, midSeason: 71000, lowSeason: 56000, length: '24.4m (80 ft)', beam: '11.5m (37.7 ft)', draft: '1.8m (5.9 ft)', port: 'Athens', region: 'Greece', apa: '25-30%', img: 'https://yachtsandliving.com/wp-content/uploads/slider25/GENNYSunreef80CrewedCatamaranCharterinGreece11-1024x768.webp?w=800&q=80', galleryImgs: ['https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/GENNY-Sunreef-80-%E2%80%93-Crewed-Catamaran-Charter-in-Greece-1-1024x768-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/GENNY-Sunreef-80-%E2%80%93-Crewed-Catamaran-Charter-in-Greece-2-1024x768-640x480.webp?w=600'], toys: ['Jet Skis', 'SeaBob', 'Wakeboard', 'E-Foil', 'Electric Aqua Scooter', 'Paddleboards', 'Kayaks', 'Snorkeling Gear', 'Towable Tubes','Inflatable Toys', 'Water Skis'], description: "GENNY is one of the most impressive sailing catamarans in the Aegean. Built in 2021 on the legendary Sunreef 80 platform, she combines performance under sail with resort-level space on deck and below. Her professional crew of six has been vetted by Yachts & Living and holds full STCW certification. Whether you want to chase the meltemi between the Cyclades or anchor in a quiet Saronic cove, GENNY delivers.", featured: true },
+  
+  
+  
+  { id: 2, name: 'ABOVE & BEYOND', type: 'Sailing Catamaran', model: 'Sunreef 80', builder: 'Sunreef Yachts', year: 2019, guests: 8, cabins: 4, crew: 5, highSeason: 77000, midSeason: 67000, lowSeason: 56000, length: '24.4m (80 ft)', beam: '11.5m (37.7 ft)', draft: '1.8m (5.9 ft)', port: 'Athens', region: 'Greece', apa: '25-30%', img: 'https://yachtsandliving.com/wp-content/uploads/2026/03/Above-and-Beyond-Sunreef-80-Crewed-Sailing-Catamaran-Yacht-Charter-in-Greece-12-1024x571-640x480.webp?w=800&q=80', galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2026/03/Above-and-Beyond-Sunreef-80-Crewed-Sailing-Catamaran-Yacht-Charter-in-Greece-16-1024x571-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/Above-and-Beyond-Sunreef-80-Crewed-Sailing-Catamaran-Yacht-Charter-in-Greece-4-1024x768-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/Above-and-Beyond-Sunreef-80-Crewed-Sailing-Catamaran-Yacht-Charter-in-Greece-11-1024x571-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/Above-and-Beyond-Sunreef-80-Crewed-Sailing-Catamaran-Yacht-Charter-in-Greece-3-1024x768-640x480.webp?w=600'], toys: ['Jet Ski', '2 SeaBobs', 'Water Skis', 'Wakeboard', 'Paddleboards', 'Kayaks', 'Snorkeling Gear', 'Towable Tubes', 'Fishing Equipment'], description: "ABOVE & BEYOND was completely refitted in 2023 and is presented in exceptional condition. This Sunreef 80 offers four beautifully appointed cabins for up to eight guests, attended by a professional crew of five. Her generous deck spaces, including a vast flybridge and multiple shaded lounging areas, make her ideal for groups who value comfort as much as sailing performance.", featured: true },
+  
+  
+  
+  { id: 3, name: 'ALOIA 80', type: 'Sailing Catamaran', model: 'Fountaine Pajot Thira 80', builder: 'Fountaine Pajot', year: 2024, guests: 10, cabins: 5, crew: 5, highSeason: 85000, midSeason: 75000, lowSeason: 65000, length: '24.4m (80 ft)', beam: '12.1m (39.7 ft)', draft: '1.55m (5.1 ft)', port: 'Athens', region: 'Greece', apa: '25-30%', img: 'https://yachtsandliving.com/wp-content/uploads/2026/03/ALOIA-80-Fountaine-Pajot-Thira-80-Crewed-Catamaran-17-1024x571-640x480.webp?w=800&q=80', galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2026/03/ALOIA-80-Fountaine-Pajot-Thira-80-Crewed-Catamaran-7-1024x768-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/ALOIA-80-Fountaine-Pajot-Thira-80-Crewed-Catamaran-9-1024x768-640x480.webp?w=600',
+  'https://yachtsandliving.com/wp-content/uploads/2026/03/ALOIA-80-Fountaine-Pajot-Thira-80-Crewed-Catamaran-1-1024x768-640x480.webp?w=600',
+  'https://yachtsandliving.com/wp-content/uploads/2026/03/ALOIA-80-Fountaine-Pajot-Thira-80-Crewed-Catamaran-18-1024x571-640x480.webp?w=600',
+  'https://yachtsandliving.com/wp-content/uploads/2026/03/ALOIA-80-Fountaine-Pajot-Thira-80-Crewed-Catamaran-11-1024x768-640x480.webp?w=600'], toys: ['Jet Ski', 'Seabob', 'Paddleboards', 'Kayaks', 'Snorkeling Gear', 'Inflatable Slide'], description: "ALOIA 80 is one of the newest Fountaine Pajot Thira 80s in Greece, launched in 2024. Her design is modern and clean, with wide-open saloon spaces that blur the line between inside and out. Five cabins accommodate up to ten guests in real comfort. Her crew of five are hand-picked professionals who know these waters well.", featured: true },
+  { id: 4, name: 'AD ASTRA', type: 'Sailing Catamaran', model: 'Fountaine Pajot 80', builder: 'Fountaine Pajot', year: 2024, guests: 10, cabins: 5, crew: 5, highSeason: 85000, midSeason: 75000, lowSeason: 65000, length: '24m (80 ft)', beam: '11.09m (36.38 ft)', draft: '2m (6.6 ft)', port: 'Athens', region: 'Greece', apa: '25-30%', img: 'https://yachtsandliving.com/wp-content/uploads/2026/03/AD-ASTRA-80-FP-Thira-80-Crewed-Sailing-Catamaran-Charter-11-1024x571-640x480.jpg?w=800&q=80', galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2026/03/AD-ASTRA-80-FP-Thira-80-Crewed-Sailing-Catamaran-Charter-3-1024x768-640x480.jpg?w=600',  'https://yachtsandliving.com/wp-content/uploads/2026/03/AD-ASTRA-80-FP-Thira-80-Crewed-Sailing-Catamaran-Charter-12-1024x571-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/AD-ASTRA-80-FP-Thira-80-Crewed-Sailing-Catamaran-Charter-14-1024x571-640x480.jpg?w=600',  'https://yachtsandliving.com/wp-content/uploads/2026/03/AD-ASTRA-80-FP-Thira-80-Crewed-Sailing-Catamaran-Charter-17-1024x571-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/AD-ASTRA-80-FP-Thira-80-Crewed-Sailing-Catamaran-Charter-19-1024x571-640x480.jpg?w=600'], toys: ['Jet Ski','Seabobs','E-Foil','Wakeboard', 'Water Skis','Kayaks','Snorkeling Gear', 'Inflatable Toys', 'Fishing Gear'], description: "Ad Astra is a 2024 Fountaine Pajot 80 — one of the most capable and comfortable sailing catamarans in the 80-foot range. Her layout fits ten guests across five cabins, and her crew of 5 is  experienced, and professional. She is perfectly suited for island hopping across the Cyclades or a more relaxed week in the Saronic.", featured: false },
+ 
+  
+  
+// CATAMARANS (Sailing & Power)
+  { id: 5, name: 'ALTEYA', type: 'Motor Yacht', model: 'Sunreef 70 Power', builder: 'Sunreef Yachts', year: 2021, guests: 8, cabins: 4, crew: 5, highSeason: 69000, midSeason: 59000, lowSeason: 49000, length: '21.3m (70 ft)', beam: '11.35m (37.2 ft)', draft: '1.9m (6.2 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2026/03/Alteya-Sunreef-70-Catamaran-Crewed-Yacht-Charter-6-1024x679-640x480.webp?w=600', galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2026/03/Alteya-Sunreef-70-Catamaran-Crewed-Yacht-Charter-5-1024x679-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/Alteya-Sunreef-70-Catamaran-Crewed-Yacht-Charter-2-1024x573-640x480.jpg?w=600','https://yachtsandliving.com/wp-content/uploads/2026/03/Alteya-Sunreef-70-Catamaran-Crewed-Yacht-Charter-2-1024x679-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/Alteya-Sunreef-70-Catamaran-Crewed-Yacht-Charter-4-1024x679-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/Alteya-Sunreef-70-Catamaran-Crewed-Yacht-Charter-3-1024x571-640x480.jpg?w=600'], toys: ['Jetski Sea Doo', 'Seabob', 'E-Foil', 'Paddleboards', 'Wakeboard', 'Snorkeling Gear'], description: "ALTEYA is a Sunreef 70 Power that earns the label of superyacht in a 70-foot package. Her build quality, interior finishes, and range of water toys make her one of the most sought-after power catamarans in the Eastern Mediterranean. A crew of five delivers a white-glove charter experience throughout." },
+
+  { id: 6, name: 'CRAZY HORSE', type: 'Power Catamaran', model: 'Lagoon Seventy 8', builder: 'Lagoon', year: 2019, guests: 10, cabins: 5, crew: 5, highSeason: 69000, midSeason: 65000, lowSeason: 50000, length: '23.7m (78 ft)', beam: '11.0m (36.1 ft)', draft: '1.27m (4.2 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2026/03/bgyb_charter_lagoon78_crazy_horse_motor_catamaran_01-1024x571-640x480.jpg?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2026/03/bgyb_charter_lagoon78_crazy_horse_motor_catamaran_04-1024x571-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/bgyb_charter_lagoon78_crazy_horse_motor_catamaran_05-1024x571-640x480.jpg?w=600','https://yachtsandliving.com/wp-content/uploads/2026/03/bgyb_charter_lagoon78_crazy_horse_motor_catamaran_06-1024x571-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/bgyb_charter_lagoon78_crazy_horse_motor_catamaran_08-1024x571-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/bgyb_charter_lagoon78_crazy_horse_motor_catamaran_14-1024x571-640x480.jpg?w=600'], toys: ['2x Yamaha Jetskis', '2x Sea Scooters', 'Wakeboard', 'Water Skis', 'Kayaks', 'Paddleboards'], description: "CRAZY HORSE is a Lagoon Seventy 8 power catamaran that redefines deck space. Her massive beam creates an enormous cockpit and saloon area, perfect for large groups. Refitted in 2023, she offers five en-suite cabins and a professional crew of five for a seamless Aegean adventure." },
+
+  { id: 7, name: 'CHRISTAL MIO', type: 'Power Catamaran', model: 'Alegria 67', builder: 'Fountaine Pajot', year: 2020, guests: 10, cabins: 5, crew: 4, highSeason: 48000, midSeason: 43000, lowSeason: 34000, length: '20.42m (67 ft)', beam: '9.84m (32.3 ft)', draft: '1.7m (5.6 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2026/03/CHRISTAL-MIO-80-Fountaine-Pajot-Power-80-Crewed-Catamaran-2-1024x640-640x480.webp?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2026/03/CHRISTAL-MIO-80-Fountaine-Pajot-Power-80-Crewed-Catamaran-5-1024x576-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/CHRISTAL-MIO-80-Fountaine-Pajot-Power-80-Crewed-Catamaran-6-1024x576-640x480.webp?w=600','https://yachtsandliving.com/wp-content/uploads/2026/03/CHRISTAL-MIO-80-Fountaine-Pajot-Power-80-Crewed-Catamaran-10-1024x576-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/CHRISTAL-MIO-80-Fountaine-Pajot-Power-80-Crewed-Catamaran-12-1024x768-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/CHRISTAL-MIO-80-Fountaine-Pajot-Power-80-Crewed-Catamaran-11-1024x768-640x480.webp?w=600'], toys: ['Seabobs', 'Floating Mats', 'Paddleboards', 'Kayaks', 'Towables', 'Water Skis'], description: "CHRISTAL MIO is the proven workhorse of the Alegria 67 lineup. Her power catamaran design provides the stability of a sailing cat with the speed of a motor yacht. A crew of four provides exceptional service for up to ten guests across five luxury cabins." },
+
+  { id: 8, name: 'SIETE MARES', type: 'Power Catamaran', model: 'Lagoon Seventy 8', builder: 'Lagoon', year: 2024, guests: 8, cabins: 4, crew: 4, highSeason: 75000, midSeason: 68000, lowSeason: 55000, length: '23.8m (78 ft)', beam: '11.0m (36.1 ft)', draft: '1.27m (4.2 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2026/03/SIETE-MARES-Lagoon-78-Crewed-Catamaran-Charter-in-Greece-18-1024x575-640x480.webp?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2026/03/SIETE-MARES-Lagoon-78-Crewed-Catamaran-Charter-in-Greece-26-1024x683-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/SIETE-MARES-Lagoon-78-Crewed-Catamaran-Charter-in-Greece-27-1024x682-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/SIETE-MARES-Lagoon-78-Crewed-Catamaran-Charter-in-Greece-28-1024x682-640x480.webp?w=600','https://yachtsandliving.com/wp-content/uploads/2026/03/SIETE-MARES-Lagoon-78-Crewed-Catamaran-Charter-in-Greece-29-1024x682-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/SIETE-MARES-Lagoon-78-Crewed-Catamaran-Charter-in-Greece-16-1024x679-640x480.webp?w=600'], toys: ['Jetski', 'Seabobs', 'Paddleboards', 'E-Foil', 'Snorkeling Equipment', 'Tender'], description: "Brand new for 2024, SIETE MARES is a masterpiece of the Lagoon Seventy 8 series. With a focus on ultra-modern luxury and silent cruising, she offers four massive staterooms and a crew dedicated to bespoke Mediterranean itineraries." },
+
+  { id: 9, name: 'JUST MARIE 2', type: 'Power Catamaran', model: 'Lagoon Seventy 8', builder: 'Lagoon', year: 2018, guests: 6, cabins: 3, crew: 4, highSeason: 65000, midSeason: 58000, lowSeason: 48000, length: '23.8m (78 ft)', beam: '11.0m (36.1 ft)', draft: '1.27m (4.2 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2026/03/JUST-MARIE-2-Lagoon-78-Crewed-Power-Catamaran-Yacht-Charter-in-Greece-1-1024x768-640x480.webp?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2026/03/JUST-MARIE-2-Lagoon-78-Crewed-Power-Catamaran-Yacht-Charter-in-Greece-14-1024x571-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/JUST-MARIE-2-Lagoon-78-Crewed-Power-Catamaran-Yacht-Charter-in-Greece-17-1024x571-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/JUST-MARIE-2-Lagoon-78-Crewed-Power-Catamaran-Yacht-Charter-in-Greece-3-1024x768-640x480.webp?w=600','https://yachtsandliving.com/wp-content/uploads/2026/03/JUST-MARIE-2-Lagoon-78-Crewed-Power-Catamaran-Yacht-Charter-in-Greece-15-1024x571-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/JUST-MARIE-2-Lagoon-78-Crewed-Power-Catamaran-Yacht-Charter-in-Greece-18-1024x571-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/JUST-MARIE-2-Lagoon-78-Crewed-Power-Catamaran-Yacht-Charter-in-Greece-19-1024x571-640x480.webp?w=600'], toys: ['Jetski', 'Sea Scooters', 'Paddleboards', 'Towables', 'Snorkeling Gear'], description: "JUST MARIE 2 offers an exclusive layout with only three cabins, allowing for an incredibly spacious master suite. Perfect for small families or couples seeking the ultimate privacy and volume on a 78-foot platform." },
+
+  { id: 10, name: 'SAMARA', type: 'Motor Yacht', model: 'Pachoud 80', builder: 'Pachoud Yachts', year: 2015, guests: 8, cabins: 4, crew: 4, highSeason: 70000, midSeason: 65000, lowSeason: 65000, length: '24.4m (80 ft)', beam: '9.3m (30.5 ft)', draft: '1.5m (4.9 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2026/03/Samara-Pachoud-80-Luxury-Crewed-Catamaran-Yacht-Charter-Greece-16-1024x571-640x480.jpg',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2026/03/Samara-Pachoud-80-Luxury-Crewed-Catamaran-Yacht-Charter-Greece-18-1024x571-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/Samara-Pachoud-80-Luxury-Crewed-Catamaran-Yacht-Charter-Greece-19-1024x571-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/Samara-Pachoud-80-Luxury-Crewed-Catamaran-Yacht-Charter-Greece-3-1024x571-640x480.jpg?w=600','https://yachtsandliving.com/wp-content/uploads/2026/03/Samara-Pachoud-80-Luxury-Crewed-Catamaran-Yacht-Charter-Greece-6-1024x768-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2026/03/Samara-Pachoud-80-Luxury-Crewed-Catamaran-Yacht-Charter-Greece-14-1024x768-640x480.jpg?w=600'], toys: ['8m Chase Boat', '2x Seadoo Spark', '2x E-foils', '2x Seabobs', 'Jacuzzi'], description: "SAMARA is a high-performance power catamaran refitted in 2024. She features a main deck master suite with private jacuzzi access and an outdoor cinema. Her massive beam provides living space comparable to a 120ft monohull." },
+
+  { id: 11, name: 'WHITE CAPS', type: 'Sailing Catamaran', model: 'Lagoon Sixty 5', builder: 'Lagoon', year: 2021, guests: 10, cabins: 5, crew: 3, highSeason: 41000, midSeason: 35000, lowSeason: 28000, length: '20.55m (67.5 ft)', beam: '10.0m (32.8 ft)', draft: '1.55m (5.1 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2025/08/White-Caps-Lagoon-65-Crewed-Sailing-Catamaran-5-1024x640-640x480.jpg?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2025/08/White-Caps-Lagoon-65-Crewed-Sailing-Catamaran-6-1024x614-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/White-Caps-Lagoon-65-Crewed-Sailing-Catamaran-1-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/White-Caps-Lagoon-65-Crewed-Sailing-Catamaran-9-1024x614-640x480.jpg?w=600','https://yachtsandliving.com/wp-content/uploads/2025/08/White-Caps-Lagoon-65-Crewed-Sailing-Catamaran-12-1024x614-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/White-Caps-Lagoon-65-Crewed-Sailing-Catamaran-17-1024x614-640x480.jpg?w=600'], toys: ['Paddleboards', 'Wakeboard', 'Water Skis', 'Snorkeling Gear', 'Floating Mat'], description: "WHITE CAPS is a premier Lagoon Sixty 5 sailing catamaran. She blends the tradition of sailing with the luxury of a modern villa. With five en-suite cabins and a skilled crew of three, she is the ideal choice for exploring the Cyclades." },
+
+  { id: 12, name: 'VALIUM 67', type: 'Power Catamaran', model: 'Lagoon Sixty 7', builder: 'Lagoon', year: 2023, guests: 10, cabins: 5, crew: 4, highSeason: 47000, midSeason: 42000, lowSeason: 36000, length: '20.15m (66 ft)', beam: '10.0m (32.8 ft)', draft: '1.15m (3.8 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2025/08/Valium-67-Lagoon-Sixty-7-Crewed-Power-Catamaran-Charter-1-1024x614-640x480.jpg?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2025/08/Valium-67-Lagoon-Sixty-7-Crewed-Power-Catamaran-Charter-2-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/Valium-67-Lagoon-Sixty-7-Crewed-Power-Catamaran-Charter-9-1024x614-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/Valium-67-Lagoon-Sixty-7-Crewed-Power-Catamaran-Charter-22-1024x614-640x480.jpg?w=600','https://yachtsandliving.com/wp-content/uploads/2025/08/Valium-67-Lagoon-Sixty-7-Crewed-Power-Catamaran-Charter-15-1024x614-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/Valium-67-Lagoon-Sixty-7-Crewed-Power-Catamaran-Charter-26-1024x614-640x480.jpg?w=600'], toys: ['Jetski', 'Seabobs', 'Paddleboards', 'Towables', 'Water Skis'], description: "VALIUM 67 is a 2023 Lagoon Sixty 7 that defines modern power catamaran luxury. She offers a sleek, open-plan interior and vast exterior lounging areas, including a flybridge designed for sunset cocktails." },
+
+  // MOTOR YACHTS (Monohulls)
+  { id:13, name: 'GLAROS', type: 'Motor Yacht', model: 'Maiora 38DP', builder: 'Maiora', year: 2006, guests: 12, cabins: 6, crew: 7, highSeason: 95000, midSeason: 80000, lowSeason: 65000, length: '40.5m (133 ft)', beam: '7.6m (25 ft)', draft: '2.9m (9.5 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2025/09/Glaros-Maiora-Crewed-motor-yacht-in-Greece-8-640x480.jpg?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2025/09/Glaros-Maiora-Crewed-motor-yacht-in-Greece-2-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/09/Glaros-Maiora-Crewed-motor-yacht-in-Greece-4-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/09/Glaros-Maiora-Crewed-motor-yacht-in-Greece-10-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/09/Glaros-Maiora-Crewed-motor-yacht-in-Greece-15-640x480.jpg?w=600'], toys: ['2x Tenders', 'Jetski', 'Water Skis', 'Wakeboard', 'Snorkeling Gear'], description: "GLAROS is a magnificent Maiora 38DP, refitted in 2019 to pristine condition. Accommodating 12 guests in 6 staterooms with a crew of 7, she offers a true superyacht experience with high-speed performance and classic Italian lines." },
+
+  { id: 14, name: 'O PATI', type: 'Motor Yacht', model: 'Golden Yachts Custom 40m', builder: 'Golden Yachts', year: 2011, guests: 12, cabins: 5, crew: 8, highSeason: 110000, midSeason: 90000, lowSeason: 90000, length: '39.5m (130 ft)', beam: '7.5m (24.6 ft)', draft: '1.4m (4.6 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2025/08/OPATI-Golden-Yachts-Crewed-Motor-Yacht-drone-1024x768-640x480.webp?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2025/08/OPATI-Golden-Yachts-Crewed-Motor-Yacht-deck-1024x768-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/OPATI-Golden-Yachts-Crewed-Motor-Yacht-dinning-1024x768-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/OPATI-Golden-Yachts-Crewed-Motor-Yacht-interia-1024x768-640x480.webp?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/motor-yachts-opati-4s-640x480.jpg?w=600'], toys: ['Evonig Tender', '3x Jetskis', 'Seabobs', 'Flyboard', 'Water Skis'], description: "O'PATI is an award-winning open yacht built by Golden Yachts. Known for her striking black hull and 32-knot top speed, she is the ultimate choice for those who want to move between islands with speed and style." },
+
+  { id: 15, name: 'DRAGON', type: 'Motor Yacht', model: 'Couach Yachts 3700 FLY', builder: 'Couach Yachts', year: 2010, guests: 12, cabins: 6, crew: 8, highSeason: 115000, midSeason: 105000, lowSeason: 90000, length: '36.9m (121 ft)', beam: '7.0m (23 ft)', draft: '2.1m (6.9 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2025/08/Dragon-Couach-Crewed-motor-yacht-in-Greece-11-1-640x480.jpg?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2025/08/Dragon-Couach-Crewed-motor-yacht-in-Greece-1-1-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/Dragon-Couach-Crewed-motor-yacht-in-Greece-8-1-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/Dragon-Couach-Crewed-motor-yacht-in-Greece-4-1-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/Dragon-Couach-Crewed-motor-yacht-in-Greece-9-1-640x480.jpg?w=600'], toys: ['2x Novurania Tenders', 'Seadoo Jetski', 'Flyboard', 'Electric Bikes', 'Wakeboards'], description: "DRAGON combines French craftsmanship with a 30-knot top speed. Her six-cabin layout includes a full-beam master and two VIPs, making her one of the most flexible high-performance motor yachts in the Greek fleet." },
+
+  { id: 16, name: 'SHOOTING STAR', type: 'Motor Yacht', model: 'Cantieri di Pisa Akhir 108', builder: 'Cantieri di Pisa', year: 2011, guests: 12, cabins: 5, crew: 6, highSeason: 85000, midSeason: 78500, lowSeason: 65000, length: '31.0m (102 ft)', beam: '7.2m (23.6 ft)', draft: '2.3m (7.5 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2025/08/Shooting-Star-Cantieri-Di-Pisa-Motor-Yacht-9-1024x614-640x480.jpg?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2025/08/Shooting-Star-Cantieri-Di-Pisa-Motor-Yacht-12-1024x614-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/Shooting-Star-Cantieri-Di-Pisa-Motor-Yacht-13-1024x614-640x480.jpg?w=600','https://yachtsandliving.com/wp-content/uploads/2025/08/Shooting-Star-Cantieri-Di-Pisa-Motor-Yacht-15-1024x614-640x480.jpg',
+  'https://yachtsandliving.com/wp-content/uploads/2025/08/Shooting-Star-Cantieri-Di-Pisa-Motor-Yacht-18-1024x614-640x480.jpg?w=600'], toys: ['Tender', 'Jetski', 'Paddleboards', 'Snorkeling Gear', 'Towables'], description: "SHOOTING STAR is a sleek Akhir 108 that blends aggressive styling with a zen-like interior. Her large flybridge and fast cruising speeds make her perfect for hitting the highlights of the Cyclades in record time." },
+
+  { id: 17, name: 'SATORI', type: 'Motor Yacht', model: 'CNSM Custom 33m', builder: 'CNSM', year: 2002, guests: 12, cabins: 5, crew: 5, highSeason: 65000, midSeason: 58000, lowSeason: 58000, length: '32.95m (108 ft)', beam: '7.5m (24.6 ft)', draft: '2.35m (7.7 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2025/08/satori-cantieri-athenian-yachts-20-1024x614-640x480.jpg?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2025/08/your-yacht-banner-2-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/satori-cantieri-athenian-yachts-15-1024x614-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/satori-cantieri-athenian-yachts-14-1024x614-640x480.jpg?w=600'], toys: ['2x Seabobs', 'Paddleboards', 'Towables', 'Snorkeling Gear', 'Tender'], description: "SATORI is a classic semi-displacement yacht refitted in 2022. She features three VIP cabins and a mahogany hull that provides exceptional stability. A 'value-luxury' choice for large groups wanting a 100ft+ experience." },
+
+  { id: 18, name: 'PARIS A', type: 'Motor Yacht', model: 'Maiora 35', builder: 'Maiora', year: 2009, guests: 12, cabins: 5, crew: 6, highSeason: 70000, midSeason: 63000, lowSeason: 55000, length: '35.05m (115 ft)', beam: '7.32m (24 ft)', draft: '3.35m (11 ft)', port: 'Athens', img: 'https://yachtsandliving.com/wp-content/uploads/2025/08/PARIS-A-Maiora-35-Crewed-Motor-Yacht-11-1024x673-640x480.jpg?w=600',  galleryImgs: ['https://yachtsandliving.com/wp-content/uploads/2025/08/PARIS-A-Maiora-35-Crewed-Motor-Yacht-1-1024x673-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/PARIS-A-Maiora-35-Crewed-Motor-Yacht-6-1024x673-640x480.jpg?w=600', 'https://yachtsandliving.com/wp-content/uploads/2025/08/PARIS-A-Maiora-35-Crewed-Motor-Yacht-10-1024x673-640x480.jpg?w=600'], toys: ['Yamaha Waverunner', 'Seabob', 'E-Pedal Board', 'Floating Mat', 'Banana'], description: "PARIS A is an immaculate Maiora 35 refitted in 2018. She features zero-speed stabilizers for maximum comfort and a state-of-the-art media system. With five elegant cabins, she is a consistent favorite in the 35m category." },
+];
+
+function getCategoryLabel(type) {
+  if (type === 'Sailing Catamaran') return 'Sailing Catamaran · Crewed Charter';
+  if (type === 'Motor Yacht') return 'Motor Yacht · Crewed Charter';
+  if (type === 'Power Catamaran') return 'Power Catamaran · Crewed Charter';
+  return type;
+}
+
+function formatPrice(n) {
+  return '€' + n.toLocaleString('en-EU');
+}
+
+// ── RENDER FLEET ──
+function renderYachts(filter) {
+  const grid = document.getElementById('yacht-grid');
+  const filtered = filter === 'all' ? yachts : yachts.filter(y => y.type === filter);
+  grid.innerHTML = filtered.map(y => `
+    <div class="yacht-card" onclick="openDetail(${y.id})">
+      <div style="overflow:hidden;">
+        <img class="yacht-card-img" src="${y.img}" alt="${y.name}" loading="lazy" onerror="this.style.background='#e8e4df'">
+      </div>
+      <div class="yacht-card-body">
+        <span class="yacht-type-badge">${getCategoryLabel(y.type)}</span>
+        <div class="yacht-name">${y.name}</div>
+        <div class="yacht-meta">${y.model} · ${y.year} · ${y.guests} Guests · ${y.cabins} Cabins</div>
+        <div class="yacht-price-row">
+          <div>
+            <div class="yacht-price-label">From</div>
+            <div class="yacht-price-val">${formatPrice(y.lowSeason)}<span style="font-size:.7rem;font-family:'Jost';font-weight:300;color:var(--gray);">/wk</span></div>
+          </div>
+          <div class="yacht-card-btn">→</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterYachts(filter, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderYachts(filter);
+}
+
+// ── DETAIL PAGE ──
+function openDetail(id) {
+  const y = yachts.find(y => y.id === id);
+  if (!y) return;
+
+  document.getElementById('detail-hero').style.backgroundImage = `url('${y.img}')`;
+  document.getElementById('detail-hero').innerHTML = `
+    <div class="detail-hero-content">
+      <div class="detail-type-badge">${getCategoryLabel(y.type)} · ${y.region}</div>
+      <div class="detail-name">${y.name}</div>
+      <div class="detail-subtitle">${y.model} · ${y.length} · Built ${y.year}</div>
+    </div>
+  `;
+
+  document.getElementById('detail-main').innerHTML = `
+    <div style="margin-bottom:3rem;">
+      <div class="detail-section-title">About This Yacht</div>
+      <p style="font-size:.9rem;line-height:1.9;color:var(--gray);">${y.description}</p>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="detail-section-title">Specifications</div>
+      <div class="specs-grid">
+        <div class="spec-item"><span class="spec-label">Yacht Type</span><span class="spec-val">${y.type}</span></div>
+        <div class="spec-item"><span class="spec-label">Builder</span><span class="spec-val">${y.builder}</span></div>
+        <div class="spec-item"><span class="spec-label">Model</span><span class="spec-val">${y.model}</span></div>
+        <div class="spec-item"><span class="spec-label">Year Built</span><span class="spec-val">${y.year}</span></div>
+        <div class="spec-item"><span class="spec-label">Length</span><span class="spec-val">${y.length}</span></div>
+        <div class="spec-item"><span class="spec-label">Beam</span><span class="spec-val">${y.beam}</span></div>
+        <div class="spec-item"><span class="spec-label">Draft</span><span class="spec-val">${y.draft}</span></div>
+        <div class="spec-item"><span class="spec-label">Home Port</span><span class="spec-val">${y.port}, Greece</span></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="detail-section-title">Accommodations</div>
+      <div class="accommodation-grid">
+        <div class="acc-item"><div class="acc-num">${y.crew}</div><div class="acc-label">Crew</div></div>
+        <div class="acc-item"><div class="acc-num">${y.cabins}</div><div class="acc-label">Cabins</div></div>
+        <div class="acc-item"><div class="acc-num">${y.guests}</div><div class="acc-label">Max Guests</div></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="detail-section-title">Charter Rates (Per Week)</div>
+      <div class="price-table">
+        <div class="price-row">
+          <div>
+            <div class="price-season">High Season</div>
+            <div class="price-apa">July – August · + VAT + APA ${y.apa}</div>
+          </div>
+          <div class="price-val">${formatPrice(y.highSeason)}</div>
+        </div>
+        <div class="price-row">
+          <div>
+            <div class="price-season">Mid Season</div>
+            <div class="price-apa">June & September · + VAT + APA ${y.apa}</div>
+          </div>
+          <div class="price-val">${formatPrice(y.midSeason)}</div>
+        </div>
+        <div class="price-row">
+          <div>
+            <div class="price-season">Low Season</div>
+            <div class="price-apa">Rest of year · + VAT + APA ${y.apa}</div>
+          </div>
+          <div class="price-val">${formatPrice(y.lowSeason)}</div>
+        </div>
+      </div>
+      <p style="font-size:.75rem;color:var(--gray);margin-top:1rem;line-height:1.7;">All rates are weekly and quoted in Euro. VAT in Greece varies from 5.2% to 13% depending on yacht category. APA (Advance Provisioning Allowance) covers fuel, mooring, provisions, crew gratuities, and other on-board expenses. Unused APA is returned at the end of the charter.</p>
+    </div>
+
+    <div style="margin-bottom:3rem;">
+      <div class="detail-section-title">Water Toys & Equipment</div>
+      <div class="toys-list">
+        ${y.toys.map(t => `<span class="toy-tag">${t}</span>`).join('')}
+      </div>
+    </div>
+
+    <div>
+      <div class="detail-section-title">Photo Gallery</div>
+      <div class="gallery-grid">
+        ${y.galleryImgs.map(img => `<img class="gallery-img" src="${img}&w=600&q=80" alt="${y.name}" onerror="this.style.background='#e8e4df'">`).join('')}
+        <img class="gallery-img" src="${y.img}&w=600&q=80" alt="${y.name}" onerror="this.style.background='#e8e4df'">
+      </div>
+    </div>
+  `;
+
+  document.getElementById('detail-sidebar').innerHTML = `
+    <div class="sidebar-card">
+      <p style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:.5rem;">Weekly Charter From</p>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:.25rem;">${formatPrice(y.lowSeason)}</div>
+      <p style="font-size:.75rem;color:var(--gray);margin-bottom:1.5rem;">+ VAT + APA ${y.apa} · All rates in EUR</p>
+      <div style="background:var(--off-white);padding:1rem;margin-bottom:1rem;font-size:.82rem;line-height:1.8;">
+        <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);">
+          <span>Guests</span><strong>Up to ${y.guests}</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);">
+          <span>Cabins</span><strong>${y.cabins}</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);">
+          <span>Crew</span><strong>${y.crew}</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:.3rem 0;">
+          <span>Home Port</span><strong>${y.port}</strong>
+        </div>
+      </div>
+	   <a href="https://yachtsandliving.com/private-yacht-charter-in-greece/" class="sidebar-cta" target="_blank" > Request This Yacht</a>
+   <!--   <button class="sidebar-cta" onclick="openBookingForYacht('${y.name}')">Request This Yacht</button>  -->
+    </div>
+
+    <div style="margin-top:1.5rem;padding:1.5rem;border:1px solid var(--border);">
+      <p style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:.75rem;">Included in Charter Rate</p>
+      <ul style="list-style:none;font-size:.8rem;color:var(--gray);line-height:2;">
+        <li>✓ Full use of the yacht and all equipment</li>
+        <li>✓ Crew wages and uniforms</li>
+        <li>✓ Crew food and accommodation</li>
+        <li>✓ Yacht insurance</li>
+        <li>✓ Ship's linen and laundry</li>
+      </ul>
+      <p style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-top:1rem;margin-bottom:.5rem;">Covered by APA</p>
+      <ul style="list-style:none;font-size:.8rem;color:var(--gray);line-height:2;">
+        <li>○ Fuel (main engines + generator)</li>
+        <li>○ Food and beverages</li>
+        <li>○ Port and mooring fees</li>
+        <li>○ Crew gratuities</li>
+        <li>○ Personal laundry</li>
+      </ul>
+    </div>
+  `;
+
+  document.getElementById('detail-page').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('detail-page').scrollTop = 0;
+}
+
+function closeDetail() {
+  document.getElementById('detail-page').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── BOOKING ──
+function openBooking() {
+  event && event.preventDefault();
+  document.getElementById('booking-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function openBookingForYacht(name) {
+  document.getElementById('modal-yacht-prefill').value = name;
+  document.getElementById('booking-modal').classList.add('open');
+}
+
+function closeBooking() {
+  document.getElementById('booking-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function submitForm() {
+  alert('Thank you for your enquiry. We will be in touch within 24 hours.');
+  closeBooking();
+}
+
+function showHome() {
+  closeDetail();
+}
+
+// Close modal on backdrop click
+document.getElementById('booking-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeBooking();
+});
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Init
+renderYachts('all');
+</script>
+</body>
+</html>
